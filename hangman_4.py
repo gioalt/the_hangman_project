@@ -38,7 +38,7 @@ class Hangman:
 		else:
 			print("Oops! This is not a valid input.") 
 
-		if guess in word:
+		if guess in self.word:
 			print(f'Good guess! {guess} is in the word.')
 			guess = guess.lower()
 			print(guess)
@@ -46,17 +46,18 @@ class Hangman:
 			print(f'Sorry, {guess} is not in the word. Try again.')
 
 	## methods: ask_for_input()
-	def ask_for_input():
+	def ask_for_input(self):
 		
 		while True:
 			guess = input("Enter one letter:  ")
 			print(guess)
-			check_guess(guess)
+			self.check_guess(guess)
 
 ### Hangman end
 
-#Hangman(["orange","apple","date","grape","pear"])
-ask_for_input()
+#game= Hangman()
+game = Hangman(["orange","apple","date","grape","pear"])
+game.ask_for_input()
 
 ### This block prints a list of fruits defined above and the secret word...  not anymore
 
